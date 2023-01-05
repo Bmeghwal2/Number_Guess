@@ -15,7 +15,7 @@ if [[ -z $CHECK_NAME ]]
   else
     echo "Welcome back, $NAME! You have played $NUMBER_OF_GAMES_PLAYED games, and your best game took $BEST_NUMBER_OF_GUESS guesses."
 fi
-
+#generate random number
 RAND_NUM=$((1 + RANDOM % 1000))
 GUESS_COUNT=1
 echo "Guess the secret number between 1 and 1000:"
