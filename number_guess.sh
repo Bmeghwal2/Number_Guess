@@ -1,6 +1,6 @@
 #!/bin/bash
 PSQL="psql --username=freecodecamp --dbname=number_guess -t --no-align -c"
-
+#enter user name
 echo "Enter your username:"
 read NAME
 
@@ -41,13 +41,11 @@ do
   fi
   GUESS_COUNT=$(($GUESS_COUNT+1))
 done
-
 if [[ $GUESS_COUNT == 1 ]]
 then
 echo "You guessed it in $GUESS_COUNT tries. The secret number was $RAND_NUM. Nice job!"
 else 
 echo "You guessed it in $GUESS_COUNT tries. The secret number was $RAND_NUM. Nice job!"
 fi
-
 FETCH_USERID_OF_PLAYER=$($PSQL "select user_id from users where username='$NAME'")
 INSERT_INTO_GAMES=$($PSQL "insert into games(number_of_guesses, user_id) values($GUESS_COUNT, $FETCH_USERID_OF_PLAYER)")
