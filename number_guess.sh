@@ -19,7 +19,7 @@ fi
 RAND_NUM=$((1 + RANDOM % 1000))
 GUESS_COUNT=1
 echo "Guess the secret number between 1 and 1000:"
-
+#read input for number guess
 while read INPUT
 do
   if [[ ! $INPUT =~  ^[0-9]+$ ]]
